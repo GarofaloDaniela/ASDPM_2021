@@ -115,7 +115,7 @@ Pmono = 8; %[4,6,8,10,12]
 [Thetap,Kappa,opt] = regr_likel(R, 'P', Pmono,'hasTheta0',1);
 % Spectral Analysis Mono
 meanRR = mean(diff(R)); % average RR interval
-Var = meanRR / Kappa; % variance of an inverse Gaussian
+Var = meanRR^3 / Kappa; % variance of an inverse Gaussian
 [tot,~,~,f] = spectral(Thetap, Var, 1/meanRR);
 
 ax = [];
